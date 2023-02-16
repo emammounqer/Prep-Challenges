@@ -21,7 +21,7 @@
 const arrInc = (arr) => {
     let result = [];
     // write your code here
-    arr.forEach((element, i) => {
+    arr.forEach((element) => {
         result.push(element + 10)
     });
     return result;
@@ -42,18 +42,9 @@ const arrInc = (arr) => {
 // 
 const roundDecimals = (arr) => {
     // write your code here
-    // solved without using Math class
     const result = [];
     arr.forEach(element => {
-        // if we use math class roundedNum = Math.round(element);
-        let roundedNum;
-        let decimals = element % 1;
-        if (decimals >= .5) {
-            roundedNum = parseInt(element) + 1
-        } else {
-            roundedNum = parseInt(element)
-        }
-
+        const roundedNum = Math.round(element);
         result.push(roundedNum)
     });
 

@@ -44,7 +44,7 @@ describe("Challenge17-03", () => {
   });
 });
 
-describe.skip("Challenge17-04", () => {
+describe("Challenge17-04", () => {
   test("Have-Same-Pattern", () => {
     expect(samePattern("cda", ["cat", "dog", "cat"])).toStrictEqual(false);
     expect(samePattern("abba", ["cat", "dog", "dog", "cat"])).toStrictEqual(

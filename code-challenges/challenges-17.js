@@ -92,6 +92,26 @@ const isPalindrome = (str) => {
 
 const samePattern = (str, arr) => {
     // write your code here
+    if(str.length !== arr.length) return false
+
+    const strAsKey = {}
+    const arrAsKey = {}
+    for (let i = 0; i < arr.length; i++) {
+        const srtKey = str[i]
+        const arrKey = arr[i]
+
+        if((strAsKey[srtKey] && !arrAsKey[arrKey]) || (!strAsKey[srtKey] && arrAsKey[arrKey])){
+            return false;
+        }else if(strAsKey[srtKey] && arrAsKey[arrKey]){
+            if(strAsKey[srtKey] !== arrKey) return false;
+            if(arrAsKey[arrKey] !== srtKey) return false;
+        }
+
+        strAsKey[srtKey] = arrKey;
+        arrAsKey[arrKey] = srtKey;
+        
+    }
+    return true
 }
 // -------------------------------------------------------------------------------------------------------
 
